@@ -1,16 +1,16 @@
-import icAyf from "@/app/assets/icons/ic-a&f.svg";
-import icBusiness from "@/app/assets/icons/ic-business.svg";
-import icContent from "@/app/assets/icons/ic-content-designer.svg";
-import icData from "@/app/assets/icons/ic-data.svg";
-import icDesigner from "@/app/assets/icons/ic-designer.svg";
-import icDeveloper from "@/app/assets/icons/ic-developer.svg";
-import icEducation from "@/app/assets/icons/ic-education.svg";
-import icGrowth from "@/app/assets/icons/ic-growth.svg";
-import icProductDesigner from "@/app/assets/icons/ic-product-designer.svg";
-import icResearcher from "@/app/assets/icons/ic-researcher.svg";
-import icTalent from "@/app/assets/icons/ic-talent.svg";
-import icUxDesigner from "@/app/assets/icons/ic-ux-designer.svg";
-import icVisualDesigner from "@/app/assets/icons/ic-visual-designer.svg";
+import icAyf from "@/assets/icons/ic-a&f.svg";
+import icBusiness from "@/assets/icons/ic-business.svg";
+import icContent from "@/assets/icons/ic-content-designer.svg";
+import icData from "@/assets/icons/ic-data.svg";
+import icDesigner from "@/assets/icons/ic-designer.svg";
+import icDeveloper from "@/assets/icons/ic-developer.svg";
+import icEducation from "@/assets/icons/ic-education.svg";
+import icGrowth from "@/assets/icons/ic-growth.svg";
+import icProductDesigner from "@/assets/icons/ic-product-designer.svg";
+import icResearcher from "@/assets/icons/ic-researcher.svg";
+import icTalent from "@/assets/icons/ic-talent.svg";
+import icUxDesigner from "@/assets/icons/ic-ux-designer.svg";
+import icVisualDesigner from "@/assets/icons/ic-visual-designer.svg";
 import type { RolePropTypes } from "./types";
 
 export const getRoleType = (roleName?: string): RolePropTypes["type"] => {
