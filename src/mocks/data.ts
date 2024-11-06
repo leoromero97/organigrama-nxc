@@ -616,8 +616,7 @@ export const DATA_MOCK: DataPropTypes[] = [
     clients: [
       {
         id: "12d8bacd-d9d7-80c6-bc42-e6c011c52f11",
-        imageUrl:
-          "https://prod-files-secure.s3.us-west-2.amazonaws.com/e3dd1d15-e027-427f-86ac-806101de075b/462bdb42-d763-4c96-893a-657ff0d19a46/nonconformist-pink.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45GO43JXI4%2F20241030%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241030T152021Z&X-Amz-Expires=3600&X-Amz-Signature=2a80268db35289a8b53e5d998f4dee96f300264c9cb100368aa1a25d1dad01d6&X-Amz-SignedHeaders=host&x-id=GetObject",
+        imageUrl: 'https://prod-files-secure.s3.us-west-2.amazonaws.com/e3dd1d15-e027-427f-86ac-806101de075b/bb8d8470-8ea2-4c24-bb24-1d337ffcd7f9/leo-romero.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45GO43JXI4%2F20241106%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241106T160414Z&X-Amz-Expires=3600&X-Amz-Signature=65086937581b5d5186dbc616b480a8a4d0856d71586f055d43e3e951a6436f11&X-Amz-SignedHeaders=host&x-id=GetObject',
         name: "Nonconformist",
       },
       {

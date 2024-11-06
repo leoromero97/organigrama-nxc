@@ -1,5 +1,4 @@
 import type {
-  DatabaseObjectResponse,
   PageObjectResponse,
   PartialDatabaseObjectResponse,
   PartialPageObjectResponse,
@@ -14,17 +13,19 @@ import { SeniorityPropTypes } from "@/components/Seniority/types";
 
 export const getData = async () => {
   const query = await api.getObjectByDatabase();
+
   const results: Array<
     | PageObjectResponse
     | PartialPageObjectResponse
     | PartialDatabaseObjectResponse
-    | DatabaseObjectResponse
   > = query.results;
 
   const pagesData: DataPropTypes[] = [];
   for (const result of results) {
     const pageId = result.id;
+
     const pageData = await api.getDataPageById(pageId);
+    
     const clientsDatabaseIds = (
       pageData as PageDataPropTypes
     )?.properties?.Cliente.relation.map(({ id }) => id);

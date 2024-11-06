@@ -12,25 +12,9 @@ export default function Header() {
       w-full max-w-8xl py-4"
     >
       <h1 className="font-semibold text-2xl text-white">
-        Organigrama Nonconformist {currentYear}
+        Nonconformist {currentYear}
       </h1>
       <div className="flex items-center w-fit gap-3">
-        <Filter
-          label="Banco Galicia"
-          onClick={() => {
-            console.log("Presionaste el filtro de Galicia");
-            setSelected("galicia");
-          }}
-          selected={selected === "galicia"}
-        />
-        <Filter
-          label="Banco Macro"
-          onClick={() => {
-            console.log("Presionaste el filtro de Macro");
-            setSelected("macro");
-          }}
-          selected={selected === "macro"}
-        />
         <input
           type="search"
           placeholder="Buscar por rol o nombre"

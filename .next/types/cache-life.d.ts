@@ -107,6 +107,20 @@ declare module 'next/cache' {
     export function unstable_cacheLife(profile: "max"): void
     
     /**
+     * Cache this `"use cache"` for a timespan defined by the `"months"` profile.
+     * ```
+     *   stale:      2592000 seconds (30 days)
+     *   revalidate: 2592000 seconds (30 days)
+     *   expire:     never
+     * ```
+     * 
+     * This cache may be stale on clients for 30 days before checking with the server.
+     * If the server receives a new request after 30 days, start revalidating new values in the background.
+     * It lives for the maximum age of the server cache. If this entry has no traffic for a while, it may serve an old value the next request.
+     */
+    export function unstable_cacheLife(profile: "months"): void
+    
+    /**
      * Cache this `"use cache"` using a custom timespan.
      * ```
      *   stale: ... // seconds 
