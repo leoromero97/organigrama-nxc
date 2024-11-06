@@ -108,3 +108,26 @@ export type PageDataPropTypes = {
     LeadNxC: NotionTeamOwnerType;
   };
 };
+
+export type FilterPropTypes = {
+  role: string;
+  seniority: string;
+  client: string;
+}
+
+export interface FilterRaw extends FilterPropTypes {
+  id: string;
+}
+
+export type FiltersPropTypes = {
+  role: string; // role era position
+  client: string;
+  seniority: string;
+  sort: "role" | "seniority" | "client";
+};
+
+export type OptionsPropTypes = {
+  roles: FilterPropTypes["role"][];
+  clients: FilterPropTypes["client"][];
+  seniorities: FilterPropTypes["seniority"][];
+}
