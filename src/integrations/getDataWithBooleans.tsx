@@ -1,6 +1,6 @@
 import { DataPropTypes } from "@/types";
 import { getData } from "./getData";
-import { DATA_MOCK } from "@/mocks/data";
+// import { DATA_MOCK } from "@/mocks/data";
 
 export default async function getMappedData(): Promise<DataPropTypes[]> {
   const dataNotion = await getData();
