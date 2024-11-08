@@ -6,4 +6,5 @@ export type SectionPropTypes = {
 export type SidebarPropTypes = {
   title: string;
   sections?: SectionPropTypes[];
+  isSelected?: string
 };

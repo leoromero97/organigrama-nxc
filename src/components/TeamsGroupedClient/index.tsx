@@ -11,7 +11,14 @@ export default function TeamsGroupedClient({
   unselected,
 }: Readonly<TeamsClientGroupPropTypes>) {
   return (
-    <section className="w-full flex flex-col gap-6 items-center max-w-8xl">
+    <section
+      className={[
+        "w-full flex flex-col gap-6 items-center max-w-8xl",
+        unselected && "hidden",
+      ]
+        .filter(Boolean)
+        .join(" ")}
+    >
       {teamLeadNxCId === teamLeadData?.id && (
         <CardCollaborator
           key={teamLeadNxCId}

@@ -1,11 +1,9 @@
 "use client";
-import React, { useState } from "react";
-import Filter from "../Filter";
+import React from "react";
 
 export default function Header() {
   const date = new Date();
   const currentYear = date.getFullYear();
-  const [selected, setSelected] = useState("");
   return (
     <header
       className="flex flex-row justify-between items-center 

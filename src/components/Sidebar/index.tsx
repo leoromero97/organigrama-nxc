@@ -1,11 +1,16 @@
-import React from "react";
+"use client"
+
+import React, { useState } from "react";
 import { SidebarPropTypes } from "./types";
 import Filter from "../Filter";
 
 export default function Sidebar({
   title,
   sections,
+  isSelected,
 }: Readonly<SidebarPropTypes>) {
+  const [selected, setSelected] = useState(isSelected);
+
   return (
     <aside className="flex flex-col gap-6 min-w-64 py-10 px-2">
       <h2 className="text-4xl font-semibold">{title}</h2>
@@ -14,7 +19,12 @@ export default function Sidebar({
           <div key={section.id} className="flex flex-col gap-1 w-full">
             <h3>{section.subtitle}</h3>
             {section.options.map((option) => (
-              <Filter key={option.concat("-", section.id)} label={option} />
+              <Filter
+                key={option.concat("-", section.id)}
+                label={option}
+                selected={option === selected}
+                onClick={() => setSelected(option)}
+              />
             ))}
           </div>
         ))}
