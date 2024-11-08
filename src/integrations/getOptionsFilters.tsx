@@ -1,8 +1,12 @@
 import type { DataPropTypes } from "@/types";
 
+export type FilterOptions = {
+  clients: string[]; seniorities: string[]; roles: string[]
+}
+
 export const getOptionsFilters = (
   data: DataPropTypes[]
-): { clients: string[]; seniorities: string[]; roles: string[] } => {
+): FilterOptions => {
   const uniqueClientNames = new Set<string>();
   const uniqueSeniorityNames = new Set<string>();
   const uniqueRolesNames = new Set<string>();
