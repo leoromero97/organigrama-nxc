@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 export type SectionPropTypes = {
   id: string;
   subtitle: string;
@@ -5,6 +7,6 @@ export type SectionPropTypes = {
 };
 export type SidebarPropTypes = {
   title: string;
-  sections?: SectionPropTypes[];
-  isSelected?: string
+  isSelected?: string;
+  children?: ReactNode;
 };

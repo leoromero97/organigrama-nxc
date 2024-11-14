@@ -27,7 +27,7 @@ export default function Avatar({ imageAlt, imageSrc, name }: Readonly<AvatarProp
           />
         )}
       </div>
-      {!!name && <span className="text-3xl font-semibold">{name}</span>}
+      {!!name && <span className="text-2xl font-semibold">{name}</span>}
     </div>
   );
 }
