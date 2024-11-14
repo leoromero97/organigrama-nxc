@@ -1,14 +1,17 @@
+"use client";
 import React from "react";
-import Image from "next/image";
-import logoNxC from "@/assets/icons/Logo-NxC.svg";
 
 export default function Header() {
+  const date = new Date();
+  const currentYear = date.getFullYear();
   return (
     <header
       className="flex flex-row justify-between items-center 
       w-full max-w-8xl py-4"
     >
-      <Image src={logoNxC} alt="Logo Nonconformist" height={32} width={280} />
+      <h1 className="font-semibold text-2xl text-white">
+        Nonconformist {currentYear}
+      </h1>
       <div className="flex items-center w-fit gap-3">
         <input
           type="search"
