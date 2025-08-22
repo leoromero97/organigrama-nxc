@@ -12,4 +12,5 @@ export type CardCollaboratorPropTypes = {
   teamOwner?: string;
   leadNxC?: string;
   isTeamOwner?: boolean | null;
+  unselected?: boolean
 };

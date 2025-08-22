@@ -3,4 +3,4 @@ export interface IIconProps {
   icon: IconList;
 }
 
-export type IconList = "IcChevronRight" | "IcSearch";
+export type IconList = "IcChevronRight" | "IcSearch" | "IcClose";

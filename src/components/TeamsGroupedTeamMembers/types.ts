@@ -4,4 +4,6 @@ export type TeamMembersGroupPropTypes = {
   teamOwnerId: string;
   teamOwnerData?: CardCollaboratorPropTypes;
   teamMembers?: CardCollaboratorPropTypes[];
+  teamOwnerUnselected?: boolean;
+  teamMemberUnselected?: boolean
 };

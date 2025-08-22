@@ -9,6 +9,8 @@ export default function TeamsGroupedClient({
   teamLeadNxCId,
   teamsByClient,
   unselected,
+  leadUnSelected,
+  collaboratorUnSelected
 }: Readonly<TeamsClientGroupPropTypes>) {
   return (
     <section
@@ -32,6 +34,7 @@ export default function TeamsGroupedClient({
           leadNxC={teamLeadData?.leadNxC}
           teamOwner={teamLeadData?.teamOwner}
           isTeamOwner={teamLeadData?.isTeamOwner}
+          unselected={leadUnSelected}
         />
       )}
       <div className="w-full">
@@ -54,6 +57,8 @@ export default function TeamsGroupedClient({
                   teamOwnerId={teamOwnersGroup.teamOwnerId}
                   teamOwnerData={teamOwnersGroup.teamOwnerData}
                   teamMembers={teamOwnersGroup.teamMembers}
+                  teamMemberUnselected={collaboratorUnSelected}
+                  teamOwnerUnselected={collaboratorUnSelected}
                 />
               ))}
             </div>

@@ -18,12 +18,18 @@ export default function CardCollaborator({
   leadNxC,
   id,
   isTeamOwner,
+  unselected,
 }: Readonly<CardCollaboratorPropTypes>) {
   return (
     <article
       id={id}
       key={id}
-      className="w-full flex flex-col max-w-72 p-4 rounded-3xl gap-4 shadow-card"
+      className={[
+        "w-full flex flex-col max-w-72 p-4 rounded-3xl gap-4 shadow-card",
+        unselected && "hidden",
+      ]
+        .filter(Boolean)
+        .join(" ")}
       style={{
         background:
           "linear-gradient(178.37deg, #B42682 -10.31%, #222222 22.49%)",

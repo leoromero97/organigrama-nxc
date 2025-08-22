@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
-import { FiltersPropTypes } from "@/types";
+import { DataPropTypes } from "@/types";
 import { TeamsClientGroupPropTypes } from "@/components/TeamsGroupedClient/types";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
@@ -11,38 +10,47 @@ import TeamsGroupedClient from "@/components/TeamsGroupedClient";
 import { FilterOptions } from "@/integrations/getOptionsFilters";
 import HomePageLoading from "./loading";
 import Filter from "@/components/Filter";
+//import InputSearch from "@/components/Inputs/InputSearch";
+import { getTeamsGroupedClient } from "@/utils/getTeamsGroupedClient";
+// import { useKeywordValue } from "@/hooks/useKeywordValue";
+// import { KeywordValueProvider } from "@/context/keywordSearchContext";
 
 function HomePageClient({
   data,
-  filters,
   titleSidebar = "Organigrama",
-  options,
 }: Readonly<{
   data: TeamsClientGroupPropTypes[];
-  filters?: FiltersPropTypes;
   titleSidebar?: string;
   options?: FilterOptions;
 }>) {
   const [selectClient, setSelectClient] = useState("all");
-  function handleFilter(key: string, value: string) {
-    // Create new search params
-    const params = new URLSearchParams(window.location.search);
+  /*  const [searchValue, setSearchValue] = useState<string>("");
+  const { setKeyword } = useKeywordValue();
 
-    // Update or remove the value changed
-    if (value) {
-      params.set(key, value);
-      setSelectClient(value);
-    } else {
-      params.delete(key);
-    }
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setSearchValue(e.target.value);
+  };
 
-    // As there is no server-side stuff going on, we can just update the URL without reloading
-    window.history.pushState(null, "", `?${params.toString()}`);
-  }
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    console.log(e)
+    e.preventDefault();
+    setKeyword(searchValue);
+  }; */
 
   return (
     <main className="min-h-screen max-h-screen flex flex-col w-full items-center gap-4">
-      <Header />
+      <Header
+      /* rightContent={
+          <form onSubmit={handleSubmit}>
+            <InputSearch
+              name="search"
+              placeholder="Buscar por rol o nombre"
+              value={searchValue}
+              onChange={handleChange}
+            />
+          </form>
+        } */
+      />
       <div className="flex flex-row max-h-[800px] max-w-8xl">
         <Sidebar title={titleSidebar} isSelected={selectClient}>
           <h2>Estructura por clientes</h2>
@@ -96,24 +104,27 @@ function HomePageClientContainer({
   titleSidebar,
   options,
 }: Readonly<{
-  data: TeamsClientGroupPropTypes[];
+  data: DataPropTypes[];
   options: FilterOptions;
   titleSidebar?: string;
 }>) {
-  const searchParams = useSearchParams();
-  const filters: FiltersPropTypes = {
-    client: searchParams.get("client") ?? "",
-    role: searchParams.get("role") ?? "",
-    seniority: searchParams.get("seniority") ?? "",
-    sort: (searchParams.get("sort") as FiltersPropTypes["sort"]) || "role",
-  };
+ /* const [dataState, setDataState] = useState(data);
+  const { keywordValue } = useKeywordValue();
 
-  //const dataFiltered = filterOptions(options, filters)
-  //const dataSorted = sortData(dataFiltered, filters)
+   useEffect(() => {
+    if (keywordValue !== "") {
+      const dataFilter = data.filter(
+        (collaborator) => collaborator.name === keywordValue
+      );
+      setDataState(dataFilter);
+    }
+  }, [keywordValue]); */
+
+  const finalData = getTeamsGroupedClient(data);
+
   return (
     <HomePageClient
-      filters={filters}
-      data={data}
+      data={finalData}
       titleSidebar={titleSidebar}
       options={options}
     />

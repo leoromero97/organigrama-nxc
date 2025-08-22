@@ -13,4 +13,6 @@ export type TeamsClientGroupPropTypes = {
   teamLeadData?: CardCollaboratorPropTypes;
   teamsByClient?: TeamsByClient[];
   unselected?: boolean;
+  leadUnSelected?: boolean;
+  collaboratorUnSelected?: boolean;
 };

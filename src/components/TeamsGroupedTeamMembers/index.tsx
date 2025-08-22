@@ -6,6 +6,8 @@ export default function TeamsGroupedTeamMembers({
   teamOwnerId,
   teamOwnerData,
   teamMembers,
+  teamOwnerUnselected,
+  teamMemberUnselected
 }: Readonly<TeamMembersGroupPropTypes>) {
   return (
     <div className="flex flex-row flex-wrap gap-8 border border-white border-opacity-50 rounded-2xl px-4 py-10 w-full justify-center">
@@ -22,6 +24,7 @@ export default function TeamsGroupedTeamMembers({
           leadNxC={teamOwnerData?.leadNxC}
           teamOwner={teamOwnerData?.teamOwner}
           isTeamOwner={teamOwnerData?.isTeamOwner}
+          unselected={teamOwnerUnselected}
         />
       )}
       {!!teamMembers &&
@@ -37,6 +40,7 @@ export default function TeamsGroupedTeamMembers({
             projectName={collaborator?.projectName}
             leadNxC={collaborator?.leadNxC}
             teamOwner={collaborator?.teamOwner}
+            unselected={teamMemberUnselected}
           />
         ))}
     </div>
